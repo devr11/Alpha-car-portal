@@ -1,6 +1,8 @@
-"use client"
+"use client";
+
 import React, { useState } from 'react'
 import { Container } from '../Container'
+import Gsap from './Gsap'
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -53,7 +55,7 @@ const Navbar = () => {
                     <div className='hidden lg:flex gap-6 items-center'>
                         <div className="flex gap-6 items-center">
                             <div className="relative group">
-                                <button className="flex items-center gap-1 text-white-700 hover:bg-gray-600 rounded-4xl p-1.5 hover:text-black font-medium">
+                                <button className="flex items-center gap-1 text-white-700 hover:bg-gray-300 rounded-4xl p-1.5 hover:text-black font-medium">
                                     Buy car
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -184,6 +186,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 )}
+                <Gsap/>
             </Container>
         </div>
     )
