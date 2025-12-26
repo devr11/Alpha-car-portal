@@ -4,8 +4,9 @@ import { useEffect } from "react";
 
 export default function Gsap() {
   useEffect(() => {
-    gsap.to("button", {
-        x:100
+    gsap.to("option", {
+        y:20,
+        stagger: 1
     })
   }, []);
 

@@ -9,7 +9,7 @@ const Navbar = () => {
     const [selectedCity, setSelectedCity] = useState('Select city')
 
     return (
-        <div className="bg-[#0F172B] border-white border-2 rounded-full">
+        <div className="bg-[#0F172B] border-white border-y-2">
             <Container>
                 <div className='w-full flex justify-between text-white items-center py-3 h-auto'>
                     <div className="flex-shrink-0 rounded-full">
