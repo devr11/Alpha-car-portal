@@ -1,8 +1,8 @@
+import EMICalculator from "@/components/EMICalculator";
 import ImageCarousel from "../components/ImageCarousel";
-import CarOverview from "../components/CarOverview";
-import PriceCalculator from "../components/PriceCalculator";
-import View360Button from "../components/View360Button";
 import { carData } from "../data/carData";
+import { Container } from "@/components/Container";
+import Product from "../components/Product";
 
 export default function Home() {
   return (
@@ -11,13 +11,15 @@ export default function Home() {
       {/* Left */}
       <div className="md:col-span-2">
         <ImageCarousel images={carData.images} />
-        <View360Button />
       </div>
 
       {/* Right */}
       <div className="md:col-span-1 space-y-6">
-        <CarOverview car={carData} />
-        <PriceCalculator basePrice={carData.price} />
+        <Product />
+        <EMICalculator />
+        <Container />
+        
+        {/* <Dashboard /> */}
       </div>
 
     </main>

@@ -52,23 +52,6 @@ export default function ImageCarousel({ images }) {
         </p>
       </div>
 
-      {/* <div className="flex items-center gap-2 mb-2">
-  <button
-    onClick={scrollLeft}
-    className="bg-white/80 text-black px-2 py-1 rounded"
-  >
-    ◀
-  </button>
-
-  <button
-    onClick={scrollRight}
-    className="bg-white/80 text-black px-2 py-1 rounded"
-  >
-    ▶
-  </button>
-</div> */}
-
-
       {/* THUMBNAILS */}
 
       <div className=" relative mt-2">
@@ -79,7 +62,7 @@ export default function ImageCarousel({ images }) {
       </div>
 
       <div className="relative">
-        <div ref={thumbRef} className="flex gap-3 overflow-hidden overflow-y-hidden scrollbar-hide pb-2">
+        <div ref={thumbRef} className="flex gap-3 overflow-x-scroll overflow-y-hidden scrollbar-hide pb-2">
           {images.map((img, index) => (
             <Image
               key={index}

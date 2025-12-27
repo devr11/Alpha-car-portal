@@ -1,0 +1,138 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.buttons {
+  text-align: center;
+  border-radius: 30px;
+}
+
+/* ===== Blob Button ===== */
+
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  top: 15px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0F172B;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.5s;
+  border-radius: 30px;
+}
+
+/* Border */
+.blob-btn::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  border: 2px solid #0F172B;
+  border-radius: 10px;
+}
+
+/* Background transition */
+.blob-btn::after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 50%;
+  height: 50%;
+  transition: all 0.3s 0.2s;
+  border-radius: 10px;
+}
+
+.blob-btn:hover {
+  color: #ffffff;
+}
+
+.blob-btn:hover::after {
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+}
+
+/* Inner container */
+.blob-btn__inner {
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+/* Blob wrapper */
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url("#goo");
+}
+
+/* Individual blobs */
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: blueviolet;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+
+/* Firefox support */
+@supports (filter: url("#goo")) {
+  .blob-btn__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+
+/* Blob positions */
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+
+/* Hover animation */
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
+}
+
+@supports (filter: url("#goo")) {
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
