@@ -1,6 +1,6 @@
 "use client";
 
-import {  Navigation } from "swiper/modules";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Container } from "./Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,6 +13,7 @@ import EMICalculator from "./EMICalculator";
 import Image from "next/image";
 
 const Product = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [selectedTab, setSelectedTab] = useState(0);
   const [showEMICalculator, setShowEMICalculator] = useState(false);
@@ -146,122 +147,100 @@ const Product = () => {
       "https://mda.spinny.com/sp-file-system/public/2024-10-27/08393e4394c84654a32f446bb2651243/raw/file.JPG",
     ],
     carouselImgUrls: [
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/953c9ed5b8e24caea1816de9beb6f53d/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/e7fb987326e3465dbbf6782dccee4d2c/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/8d7b4bc2fdcf4188a934178e9d8cd167/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/6eee2a4ff0cf411eac08bc7560dc8e08/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/7bda23a875de4550b17b006ba26bc30e/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/3bad01e406f9439684e5672e5c5bfdfd/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/9ad12e88626f4b2ab24ea83e5fa302a0/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/a2d9912c99894eb2b8bfa30406647b4d/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/3b6c612714954ac29b71dda47d270afa/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/4853cedc856f46a1942a9805845f51ef/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/af0aae5931d34af28f94b0b747d65d12/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/9a8177b3551246e0964e0d7fed8b0ba4/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/1608f8a1ba444ff192012d870482d139/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/3c327ee07b9641339a896707e6d25e51/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/0b50cfea7849486b8ab59879a065ecb2/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/956bdee3252c4fd2957cb31610899d84/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/0cad4310ee91491c97aafc6d389acfb8/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/772bfcb48fc34d03b3af1477a036b3da/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/9ea5ad9c1e114f72b7a8dcd48021a1a5/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/c0814a0f7e2749239349fb1d3d99bd28/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/b4232f51dcb24899b4a8ebae05131a17/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/9cbe07f358474547b2acd4b8f846e567/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/dee8a45398064d44a481d4101c099ff2/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/7fc4d15083e04b478e803dda96fafe19/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/b7b39bc072704693a6489d16491bf088/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/ee38b1a395df4dd0a49215cdfce686f2/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/ea65349f12d24a72965a32609694220a/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/88b4f86548d846ebb8b07a9975b628db/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/438a0e4440cf424b97a0e73ce227c3a9/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/8239bf597f7240f7b8a0454f7b4b7133/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/5e4b95fa39fb4affaf449e805f65886a/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/dab74789fe524116943932d1bb9bc2b4/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/ca4ee9af20ec4225881659bc7f712da3/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/67797df0e7ec4c7887921c3274febff6/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/15a6398dd0ed4b54ab676e9c1700ae94/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/1f8664a37a844ca8967522e249509d16/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/fc03208e2d51471184f26568c83698ed/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/b69606b163c74d87a3eac19804ec5a0f/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/67cfa5e7363c42e3a53bc527f372b84e/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/43b8d2912a6c4b8ca0ee7b7aae9df404/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/6a7ad5eaa84d49a59e657b41e1690991/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/b97530e5c85342a7850826624ef2bfbf/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/74bd0840142b435eb0cfe1cb57d62d88/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/a9287b106d2a40b4a556f90810b04470/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/541fbd0c27524cc1baf4a7ace9ddbf29/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/2f14cc565f554e5f97c4ff9293f7c482/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/eca4b98ebf3044a3a3a159ade1566d8f/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/3e9b0b8ccfe6458b8e68c164aa23fedd/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/7e2eeed8bc35432aaf987a9f10ef0e53/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/fde3782c96714bddb855a8a6a4181c7c/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/fd8d1e2b7c674e34b62e5e5a0a5520ed/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/71c3b54471664fc3886a2f26030ac963/raw/file.JPG?q=85&w=320",
-      "https://mda.spinny.com/sp-file-system/public/2024-10-27/50e292be244148cab48ecf3ef901e08d/raw/file.JPG?q=85&w=320",
-    ],
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/3bad01e406f9439684e5672e5c5bfdfd/raw/file.JPG?q=85&w=900&dpr=1.3",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/9ad12e88626f4b2ab24ea83e5fa302a0/raw/file.JPG?q=85&amp;w=900&amp;dpr=1.3",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/41a8a8b2a63b414d81c687c80d30ede2/raw/file.JPG?q=85",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/953c9ed5b8e24caea1816de9beb6f53d/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/e7fb987326e3465dbbf6782dccee4d2c/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/8d7b4bc2fdcf4188a934178e9d8cd167/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/6eee2a4ff0cf411eac08bc7560dc8e08/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/7bda23a875de4550b17b006ba26bc30e/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/3bad01e406f9439684e5672e5c5bfdfd/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/9ad12e88626f4b2ab24ea83e5fa302a0/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/a2d9912c99894eb2b8bfa30406647b4d/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/3b6c612714954ac29b71dda47d270afa/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/4853cedc856f46a1942a9805845f51ef/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/af0aae5931d34af28f94b0b747d65d12/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/9a8177b3551246e0964e0d7fed8b0ba4/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/1608f8a1ba444ff192012d870482d139/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/3c327ee07b9641339a896707e6d25e51/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/0b50cfea7849486b8ab59879a065ecb2/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/956bdee3252c4fd2957cb31610899d84/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/956bdee3252c4fd2957cb31610899d84/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/c0814a0f7e2749239349fb1d3d99bd28/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/9cbe07f358474547b2acd4b8f846e567/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/dee8a45398064d44a481d4101c099ff2/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/7fc4d15083e04b478e803dda96fafe19/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/b7b39bc072704693a6489d16491bf088/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/ee38b1a395df4dd0a49215cdfce686f2/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/ea65349f12d24a72965a32609694220a/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/88b4f86548d846ebb8b07a9975b628db/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/438a0e4440cf424b97a0e73ce227c3a9/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/8239bf597f7240f7b8a0454f7b4b7133/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/5e4b95fa39fb4affaf449e805f65886a/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/dab74789fe524116943932d1bb9bc2b4/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/ca4ee9af20ec4225881659bc7f712da3/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/67797df0e7ec4c7887921c3274febff6/raw/file.JPG?q=85&amp;w=320" ,
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/67cfa5e7363c42e3a53bc527f372b84e/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/43b8d2912a6c4b8ca0ee7b7aae9df404/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/6a7ad5eaa84d49a59e657b41e1690991/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/b97530e5c85342a7850826624ef2bfbf/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/74bd0840142b435eb0cfe1cb57d62d88/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/a9287b106d2a40b4a556f90810b04470/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/541fbd0c27524cc1baf4a7ace9ddbf29/raw/file.JPG?q=85&amp;w=320",
+    "https://mda.spinny.com/sp-file-system/public/2024-10-27/eca4b98ebf3044a3a3a159ade1566d8f/raw/file.JPG?q=85&amp;w=320"
+  ],
   };
 
   return (
     <Container>
-      <div className="w-full flex flex-col lg:flex-row h-full gap-2">
-        <div className="relative right-12 top-1">
+      <div className='w-full flex flex-col mt-4 lg:flex-row h-full gap-2'>
+        <div className='w-full lg:w-2/3 h-[50vh] md:h-[70vh] lg:h-[85vh] relative'>
           <button
-            className="absolute top-3 right-3 z-10 bg-white text-black md:right-64 lg:right-2 px-4 py-2 rounded shadow-lg font-semibold"
-            onClick={() => setShowPopup(true)}
+                        className='absolute top-4 right-4 z-10 bg-white text-[#561381] px-4 py-2 rounded shadow-lg font-semibold'
+                        onClick={() => setShowPopup(true)}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-view-360-number"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14 6a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1h-3" /><path d="M3 5h2.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1 -1.5 1.5h-1.5h1.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1 -1.5 1.5h-2.5" /><path d="M17 7v4a2 2 0 1 0 4 0v-4a2 2 0 1 0 -4 0z" /><path d="M3 16c0 1.657 4.03 3 9 3s9 -1.343 9 -3" /></svg>
+                    </button>
+
+          <Swiper
+            className="h-3/4 w-full rounded-xl"
+            style={{
+              "--swiper-navigation-color": "#fff",
+            }}
+            spaceBetween={0}
+            navigation={true}
+            thumbs={{ swiper: thumbsSwiper }}
+            modules={[FreeMode, Navigation, Thumbs]}
+            loop={true}
           >
-            <svg
-              fill="#000000"
-              height="20px"
-              width="25px"
-              version="1.1"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              viewBox="0 0 480 480"
-              xmlSpace="preserve"
-            >
-              <g>
-                <g>
-                  <g>
-                    <path
-                      d="M391.502,210.725c-5.311-1.52-10.846,1.555-12.364,6.865c-1.519,5.31,1.555,10.846,6.864,12.364
-				C431.646,243.008,460,261.942,460,279.367c0,12.752-15.51,26.749-42.552,38.402c-29.752,12.82-71.958,22.2-118.891,26.425
-				l-40.963-0.555c-0.047,0-0.093-0.001-0.139-0.001c-5.46,0-9.922,4.389-9.996,9.865c-0.075,5.522,4.342,10.06,9.863,10.134
-				l41.479,0.562c0.046,0,0.091,0.001,0.136,0.001c0.297,0,0.593-0.013,0.888-0.039c49.196-4.386,93.779-14.339,125.538-28.024
-				C470.521,316.676,480,294.524,480,279.367C480,251.424,448.57,227.046,391.502,210.725z"
-                    />
-                    <path
-                      d="M96.879,199.333c-5.522,0-10,4.477-10,10c0,5.523,4.478,10,10,10H138v41.333H96.879c-5.522,0-10,4.477-10,10
-				s4.478,10,10,10H148c5.523,0,10-4.477,10-10V148c0-5.523-4.477-10-10-10H96.879c-5.522,0-10,4.477-10,10s4.478,10,10,10H138
-				v41.333H96.879z"
-                    />
-                    <path
-                      d="M188.879,280.667h61.334c5.522,0,10-4.477,10-10v-61.333c0-5.523-4.477-10-10-10h-51.334V158H240c5.523,0,10-4.477,10-10
-				s-4.477-10-10-10h-51.121c-5.523,0-10,4.477-10,10v122.667C178.879,276.19,183.356,280.667,188.879,280.667z M198.879,219.333
-				h41.334v41.333h-41.334V219.333z"
-                    />
-                    <path
-                      d="M291.121,280.667h61.334c5.522,0,10-4.477,10-10V148c0-5.523-4.478-10-10-10h-61.334c-5.522,0-10,4.477-10,10v122.667
-				C281.121,276.19,285.599,280.667,291.121,280.667z M301.121,158h41.334v102.667h-41.334V158z"
-                    />
-                    <path
-                      d="M182.857,305.537c-3.567-4.216-9.877-4.743-14.093-1.176c-4.217,3.567-4.743,9.876-1.177,14.093l22.366,26.44
-				c-47.196-3.599-89.941-12.249-121.37-24.65C37.708,308.06,20,293.162,20,279.367c0-16.018,23.736-33.28,63.493-46.176
-				c5.254-1.704,8.131-7.344,6.427-12.598c-1.703-5.253-7.345-8.13-12.597-6.427c-23.129,7.502-41.47,16.427-54.515,26.526
-				C7.674,252.412,0,265.423,0,279.367c0,23.104,21.178,43.671,61.242,59.48c32.564,12.849,76.227,21.869,124.226,25.758
-				l-19.944,22.104c-3.7,4.1-3.376,10.424,0.725,14.123c1.912,1.726,4.308,2.576,6.696,2.576c2.731,0,5.453-1.113,7.427-3.301
-				l36.387-40.325c1.658-1.837,2.576-4.224,2.576-6.699v-0.764c0-2.365-0.838-4.653-2.365-6.458L182.857,305.537z"
-                    />
-                    <path
-                      d="M381.414,137.486h40.879c5.522,0,10-4.477,10-10V86.592c0-5.523-4.478-10-10-10h-40.879c-5.522,0-10,4.477-10,10v40.894
-				C371.414,133.009,375.892,137.486,381.414,137.486z M391.414,96.592h20.879v20.894h-20.879V96.592z"
-                    />
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </button>
+            {ProductDetail.carouselImgUrls.map((url, index) => (
+              <SwiperSlide
+                key={index}
+                className="flex items-center justify-center bg-black"
+              >
+                <img src={url} className="h-full w-full object-cover" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Swiper
+            className="mt-2 rounded-xl h-1/4"
+            onSwiper={setThumbsSwiper}
+            spaceBetween={8}
+            slidesPerView={4}
+            freeMode={true}
+            watchSlidesProgress={true}
+            modules={[FreeMode, Navigation, Thumbs]}
+          >
+            {ProductDetail.carouselImgUrls.map((url, index) => (
+              <SwiperSlide
+                key={index}
+                className="flex rounded-xl items-center justify-center bg-black"
+              >
+                <img src={url} className="h-full w-full object-cover" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
         <div className="w-full lg:w-full flex h-full gap-y-2 flex-col mt-4 lg:mt-0">
           <div className="rounded-xl border-2 border-black bg-gray-200 text-black">
@@ -295,7 +274,9 @@ const Product = () => {
             </div>
             <div className="w-full border border-black" />
             <div className="px-4 mt-2">
-              <div className="text-sm opacity-90 tracking-wide">Fixed on road price</div>
+              <div className="text-sm opacity-90 tracking-wide">
+                Fixed on road price
+              </div>
               <div className="text-2xl font-semibold mt-2 mb-2">
                 {ProductDetail.price}{" "}
                 <span className="text-base">+ 1% TCS </span>
@@ -306,7 +287,7 @@ const Product = () => {
               </div>
               <div className="w-full border border-black" />
 
-              <button className="w-full bg-[#561381] text-white py-2 rounded-lg my-2 font-semibold">
+              <button className="w-full bg-[#561381] tracking-wide text-white py-2 rounded-lg my-2 font-semibold">
                 Book a Test Drive
               </button>
 
@@ -404,9 +385,6 @@ const Product = () => {
                 <div className="text-lg md:text-xl font-bold">
                   {ProductDetail.price}
                 </div>
-                <button className="px-3 md:px-4 bg-[#561381] text-white py-2 rounded-lg font-semibold text-sm md:text-base whitespace-nowrap">
-                  Book Test Drive
-                </button>
               </div>
             </div>
 
