@@ -18,8 +18,6 @@ export default function Home() {
         <Product />
         <EMICalculator />
         <Container />
-        
-        {/* <Dashboard /> */}
       </div>
 
     </main>

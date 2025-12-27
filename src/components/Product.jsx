@@ -10,6 +10,7 @@ import "swiper/css/thumbs";
 import { Turntable } from "./TurnTable";
 import { useState } from "react";
 import EMICalculator from "./EMICalculator";
+import Image from "next/image";
 
 const Product = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -216,9 +217,9 @@ const Product = () => {
               version="1.1"
               id="Layer_1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsxlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 480 480"
-              xmlspace="preserve"
+              xmlSpace="preserve"
             >
               <g>
                 <g>
@@ -281,7 +282,7 @@ const Product = () => {
                     height="15"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    class="icon icon-tabler icons-tabler-filled icon-tabler-map-pin"
+                    className="icon icon-tabler icons-tabler-filled icon-tabler-map-pin"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" />
@@ -292,7 +293,7 @@ const Product = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full border-[1px] border-black" />
+            <div className="w-full border border-black" />
             <div className="px-4 mt-2">
               <div className="text-sm opacity-90 tracking-wide">Fixed on road price</div>
               <div className="text-2xl font-semibold mt-2 mb-2">
@@ -303,7 +304,7 @@ const Product = () => {
                 {" "}
                 Includes RC transfer , insurance & more
               </div>
-              <div className="w-full border-[1px] border-black" />
+              <div className="w-full border border-black" />
 
               <button className="w-full bg-[#561381] text-white py-2 rounded-lg my-2 font-semibold">
                 Book a Test Drive
@@ -370,7 +371,7 @@ const Product = () => {
             <div className="flex justify-between items-center pt-4 pb-3 px-4 md:px-6 shadow-sm border-b border-gray-100">
               <div className="flex gap-x-3 items-center flex-1 min-w-0">
                 <button
-                  className="text-gray-500 hover:text-gray-800 transition-colors flex-shrink-0"
+                  className="text-gray-500 hover:text-gray-800 transition-colors shrink-0"
                   onClick={() => setShowPopup(false)}
                 >
                   <svg
@@ -399,7 +400,7 @@ const Product = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-2 md:gap-4 items-center flex-shrink-0">
+              <div className="flex gap-2 md:gap-4 items-center shrink-0">
                 <div className="text-lg md:text-xl font-bold">
                   {ProductDetail.price}
                 </div>
@@ -473,7 +474,7 @@ const Product = () => {
                             key={index}
                             className="flex items-center justify-center bg-black rounded-xl overflow-hidden"
                           >
-                            <img
+                            <Image
                               src={url}
                               className="h-full w-full object-cover"
                               alt={`Car view ${index + 1}`}

@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="bg-[#0F172B] border-white border-y-2">
       <Container>
         <div className="w-full flex justify-between text-white items-center py-3 h-auto">
-          <div className="flex-shrink-0 rounded-full">
+          <div className="shrink-0 rounded-full">
             <Image
               alt="logo"
               src="/52212770-car-icon-on-black-circle.avif"
