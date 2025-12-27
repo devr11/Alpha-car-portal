@@ -1,6 +1,6 @@
 "use client";
+import Image from "next/image";
 import { useState, useRef } from "react";
-
 
 export default function ImageCarousel({ images }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -19,10 +19,12 @@ export default function ImageCarousel({ images }) {
     <div className="space-y-1.5">
       {/* MAIN IMAGE */}
       <div className="relative">
-        <img
+        <Image
+          height={600}
+          width={900}
           src={images[activeIndex]}
           alt="Car"
-          className="w-full h-[360px] object-cover rounded-lg"
+          className="w-full h-120 object-cover rounded-lg"
         />
 
         {/* Left Arrow */}
@@ -79,12 +81,14 @@ export default function ImageCarousel({ images }) {
       <div className="relative">
         <div ref={thumbRef} className="flex gap-3 overflow-hidden overflow-y-hidden scrollbar-hide pb-2">
           {images.map((img, index) => (
-            <img
+            <Image
               key={index}
               src={img}
+              width={200}
+              height={120}
               alt="Thumbnail"
               onClick={() => setActiveIndex(index)}
-              className={`h-20 w-28 flex-shrink-0 object-cover rounded cursor-pointer border-2 transition
+              className={`h-20 w-28 shrink-0 object-cover rounded cursor-pointer border-2 transition
           ${
             activeIndex === index
               ? "border-purple-500"
