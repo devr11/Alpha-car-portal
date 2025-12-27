@@ -24,7 +24,7 @@ export default function ImageCarousel({ images }) {
           width={900}
           src={images[activeIndex]}
           alt="Car"
-          className="w-full h-120 object-cover rounded-lg"
+          className="w-full h-120 sm:w-2xl lg:w-full object-cover rounded-lg"
         />
 
         {/* Left Arrow */}

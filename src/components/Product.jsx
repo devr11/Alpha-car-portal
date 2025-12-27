@@ -207,7 +207,7 @@ const Product = () => {
       <div className="w-full flex flex-col lg:flex-row h-full gap-2">
         <div className="relative right-12 top-1">
           <button
-            className="absolute top-2 right-1 z-10 bg-white text-black px-4 py-2 rounded shadow-lg font-semibold"
+            className="absolute top-3 right-3 z-10 bg-white text-black md:right-64 lg:right-2 px-4 py-2 rounded shadow-lg font-semibold"
             onClick={() => setShowPopup(true)}
           >
             <svg
