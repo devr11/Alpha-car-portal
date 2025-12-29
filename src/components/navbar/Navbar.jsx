@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Container } from "../Container";
-import Gsap from "./Gsap";
 import BlobButton from "./BlobButton";
 import Image from "next/image";
 
@@ -28,7 +27,7 @@ const Navbar = () => {
             <div className="relative">
               <select
                 className="appearance-none bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 font-bold text-sm text-[#0F172B] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                value={selectedCity}
+                value={selectedCity}  
                 onChange={(e) => setSelectedCity(e.target.value)}
               >
                 <option value="Select city">Select city</option>
@@ -262,7 +261,6 @@ const Navbar = () => {
             </div>
           </div>
         )}
-        <Gsap />
       </Container>
     </div>
   );
